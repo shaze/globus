@@ -9,18 +9,21 @@ Config files for the Wits Globus Online endpoints
 
 ## Installation steps
 
+
+
 ```
 
 
+#If you don't have a project already leave --project-id out, otherwise get your project ID from your records or https://app.globus.org/settings/developers
 globus-connect-server endpoint setup "za-wits-core-store03"     --organization "University of the Witwatersrand"  \
-         --owner user@globusid.org --project-id  projectid     --contact-email scott.hazelhurst@wits.ac.za
+         --owner user@globusid.org --project-id $PROJECTID     --contact-email scott.hazelhurst@wits.ac.za
 globus-connect-server node setup
 globus-connect-server login localhost
 globus-connect-server endpoint show
 
 export ENDPOINTID=XXXXX  # from the above
 export ADMINUUID=YYY # uuid of administrator
-export DISKPATH=where colleciton goes
+export DISKPATH=where collection goes
 
 globus-connect-server storage-gateway create posix za-wits-core-store03-gw --domain globusid.org  --domain orcid.org --user-allow scott --identity-mapping file:/opt/sysconfig/gridmap/mapping.json
 
