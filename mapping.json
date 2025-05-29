@@ -1,0 +1,6 @@
+{
+  "DATA_TYPE": "external_identity_mapping#1.0.0",
+  "command": [
+    "/usr/local/bin/globus-map.py"
+  ]
+}
